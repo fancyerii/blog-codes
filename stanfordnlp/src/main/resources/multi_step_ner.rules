@@ -1,0 +1,32 @@
+# make all patterns case-insensitive in the rules file
+# ENV.defaultStringMatchFlags = 66
+# ENV.defaultStringPatternFlags = 66
+
+# these Java classes will be used by the rules
+ner = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation" }
+tokens = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$TokensAnnotation" }
+
+# variables for complex regexes
+$JOB_TITLE_BASES = "/president|secretary|general/"
+$JOB_TITLE_MODIFIERS = "/vice|assistant|deputy/"
+
+# first phase identifies components of job titles
+# a TokensRegex pipeline can run various stages
+# to specify a particular stage, set ENV.defaults["stage"] to the stage number
+ENV.defaults["stage"] = 1
+
+# tokens match phase
+{ ruleType: "tokens", pattern: ([{word:$JOB_TITLE_MODIFIERS}]+), action: Annotate($0, ner, "JOB_TITLE_MODIFIER") }
+{ ruleType: "tokens", pattern: ([{word:$JOB_TITLE_BASES}]), action: Annotate($0, ner, "JOB_TITLE_BASE") }
+
+# second phase identifies complete job titles from components found in first phase
+ENV.defaults["stage"] = 2
+{ ruleType: "tokens", pattern: ([{ner: "JOB_TITLE_MODIFIER"}]+ [{ner: "JOB_TITLE_BASE"}]), 
+  action: Annotate($0, ner, "COMPLETE_JOB_TITLE"), result: "FOUND_COMPLETE_JOB_TITLE"}
+
+# third phase is a filter phase, and it removes matched expressions that the filter matches
+ENV.defaults["stage"] = 3
+# clean up component named entity tags from stage 1
+{ ruleType: "tokens", pattern: ([{ner:"JOB_TITLE_MODIFIER"} | {ner:"JOB_TITLE_BASE"}]+), action: Annotate($0, ner, "O") }
+# filter out the matched expression "deputy vice president"
+{ ruleType: "filter", pattern: ([{word:"deputy"}] [{word:"vice"}] [{word:"president"}]) }
