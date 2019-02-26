@@ -11,8 +11,11 @@ public class PipelineDemo {
 	public static void main(String[] args) {
 		// set up pipeline properties
 		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit");
 		
+		// 下面的代码是有问题的。
+		// props.setProperty("annotators", "ssplit,tokenize");
+		
+		props.setProperty("annotators", "tokenize,ssplit");
 		// set up pipeline
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		
