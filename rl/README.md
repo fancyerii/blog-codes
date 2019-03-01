@@ -13,7 +13,7 @@ $ jupyter notebook
 [I 21:28:20.481 NotebookApp] http://localhost:8888/?token=414eabf67860bd5843a4d53bde1ed6f3a61fb3a52ef0742c
 
 ```
-请点击上面的包含"http://localhost:8888"的链接用浏览器打开，然后选择打开对应的ipynb文件。
+请点击上面的包含"http<nolink>://localhost:8888"的链接用浏览器打开，然后选择打开对应的ipynb文件。
 
 **代码**
 
