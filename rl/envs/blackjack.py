@@ -63,19 +63,19 @@ class BlackjackEnv(gym.Env):
             spaces.Discrete(32),
             spaces.Discrete(11),
             spaces.Discrete(2)))
-        self._seed()
+        self.seed()
 
         # 这个Flag表示如果玩家natural赢了的奖励是1.5倍。
         self.natural = natural
         # 开始游戏
-        self._reset()
+        self.reset()
         self.nA = 2
 
-    def _seed(self, seed=None):
+    def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-    def _step(self, action):
+    def step(self, action):
         assert self.action_space.contains(action)
         if action:  # hit: 继续要牌
             self.player.append(draw_card(self.np_random))
@@ -98,7 +98,7 @@ class BlackjackEnv(gym.Env):
     def _get_obs(self):
         return (sum_hand(self.player), self.dealer[0], usable_ace(self.player))
 
-    def _reset(self):
+    def reset(self):
         # 每人都来两张牌
         self.dealer = draw_hand(self.np_random)
         self.player = draw_hand(self.np_random)
