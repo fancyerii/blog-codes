@@ -82,7 +82,7 @@ class GridworldEnv(discrete.DiscreteEnv):
 
         super(GridworldEnv, self).__init__(nS, nA, P, isd)
 
-    def _render(self, mode='human', close=False):
+    def render(self, mode='human', close=False):
         if close:
             return
 
