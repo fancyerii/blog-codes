@@ -7,3 +7,4 @@
 * Stanford CoreNLP示例 [博客文章]() [代码](./stanfordnlp)
 * 强化学习简介 [博客文章](http://fancyerii.github.io/2019/03/01/rl1/) [代码](./rl)
 * 语音关键词识别 [博客文章](http://fancyerii.github.io/2019/03/06/tf-keywords/) [代码](./tf-keywords)
+* 语言模型示例 [博客文章](http://fancyerii.github.io/2019/03/08/lm/) [代码](./lm)
