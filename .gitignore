@@ -101,4 +101,8 @@ venv.bak/
 /site
 
 # mypy
+target/
+**/.project
+**/.classpath
+.settings/
 .mypy_cache/
