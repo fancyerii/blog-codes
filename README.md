@@ -11,4 +11,5 @@
 * pdfbox示例 [博客文章](http://fancyerii.github.io/2019/03/12/1_pdfbox/) [代码](./testpdfbox)
 * Tesseract C++代码 [博客文章](http://fancyerii.github.io/2019/03/12/3_tesseract/#c%E6%8E%A5%E5%8F%A3%E7%A4%BA%E4%BE%8B) [代码](./test-tesseract-cpp)
 * Tesseract Java代码 [博客文章](http://fancyerii.github.io/2019/03/12/3_tesseract/#java%E6%8E%A5%E5%8F%A3) [代码](./test-tesseract-java)
-* HMM和WFST示例 [博客文章]() [代码](./hmm-wfst)
+* HMM和WFST示例 [博客文章](http://fancyerii.github.io/2019/03/14/wfst-codes/) [代码](./hmm-wfst)
+* mxGraph Java [博客文章]() [代码](./mxgraphjava)
