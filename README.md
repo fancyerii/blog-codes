@@ -14,3 +14,4 @@
 * HMM和WFST示例 [博客文章](http://fancyerii.github.io/books/wfst-codes/) [代码](./hmm-wfst)
 * mxGraph Java [博客文章](http://fancyerii.github.io/2019/03/26/mxgraph/) [代码](./mxgraphjava)
 * Deep Q-Learning代码 [博客文章](http://fancyerii.github.io/books/dqn) [代码](./dqn)
+* Policy Gradient代码 [博客文章](http://fancyerii.github.io/books/pg) [代码](./pg)
