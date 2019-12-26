@@ -15,3 +15,4 @@
 * mxGraph Java [博客文章](https://fancyerii.github.io/2019/03/26/mxgraph/) [代码](./mxgraphjava)
 * Deep Q-Learning代码 [博客文章](https://fancyerii.github.io/books/dqn) [代码](./dqn)
 * Policy Gradient代码 [博客文章](https://fancyerii.github.io/books/pg) [代码](./pg)
+* DeepFM模型CTR预估理论与实战 [博客文章](https://fancyerii.github.io/2019/12/19/deepfm) [代码](./ctr)
