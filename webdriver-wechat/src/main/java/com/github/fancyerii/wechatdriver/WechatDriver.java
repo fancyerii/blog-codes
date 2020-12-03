@@ -47,7 +47,7 @@ public class WechatDriver {
             Files.write(tmpFile.toPath(), bytes);
             System.out.println("请扫描 "+tmpFile.getAbsolutePath()+" 登录");
 
-            //检查是否找不到二维码从而判断已经扫描
+            //检查是否找不到二维码从而判断已经扫码
             while(true){
                 qrImg=findElement(driver, By.xpath("//DIV[@class='qrcode']/IMG"));
                 if(qrImg==null) break;
@@ -58,7 +58,7 @@ public class WechatDriver {
                 }
                 System.out.println("请扫描 "+tmpFile.getAbsolutePath()+" 登录");
                 try {
-                    Thread.sleep(30000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                 }
             }
